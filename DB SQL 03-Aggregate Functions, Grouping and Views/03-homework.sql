@@ -41,7 +41,7 @@ ORDER BY ID;
 
 -- Ex.5 --
 
-SELECT Student.ID,Student.FirstName,COUNT(Grade) AS TotalGrades, MAX(Grade) AS [Max Grade], AVG(Grade) AS [Average Grade] FROM Grade
+SELECT Student.ID,Student.FirstName,COUNT(Grade) AS TotalGrades, MAX(Grade) AS MaxGrade, AVG(Grade) AS AverageGrade FROM Grade
 JOIN Student ON Student.ID = Grade.StudentID
 GROUP BY  Student.ID,Student.FirstName
 HAVING MAX(Grade) = AVG(Grade)
