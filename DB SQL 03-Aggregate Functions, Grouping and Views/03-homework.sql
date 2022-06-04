@@ -31,7 +31,6 @@ GROUP BY  Student.ID,Student.FirstName
 
 
 --Ex.4 --
-
 SELECT Teacher.ID,Teacher.FirstName, COUNT(Grade) AS TotalGrades FROM Grade
 JOIN Teacher ON TeacherID = Teacher.ID
 GROUP BY  Teacher.ID,Teacher.FirstName
@@ -40,7 +39,6 @@ ORDER BY ID;
 
 
 -- Ex.5 --
-
 SELECT Student.ID,Student.FirstName,COUNT(Grade) AS TotalGrades, MAX(Grade) AS MaxGrade, AVG(Grade) AS AverageGrade FROM Grade
 JOIN Student ON Student.ID = Grade.StudentID
 GROUP BY  Student.ID,Student.FirstName
@@ -48,7 +46,6 @@ HAVING MAX(Grade) = AVG(Grade)
 
 
 -- Ex.6 --
-
 CREATE OR ALTER VIEW vv_StudentGrades
 AS
 SELECT Student.ID, Student.FirstName, COUNT(Grade) AS TotalGrades FROM [dbo].Grade
@@ -59,7 +56,6 @@ SELECT * FROM  [dbo].vv_StudentGrades;
 
 
 -- Ex.7 --
-
 CREATE OR ALTER VIEW vv_StudentGrades
 AS
 SELECT Student.FirstName,Student.LastName, COUNT(Grade) AS TotalGrades FROM [dbo].Grade
